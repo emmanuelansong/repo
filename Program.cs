@@ -21,19 +21,24 @@ namespace ConsoleApp1
             {
                 Console.Write(X + ", ");
             }
+            //this sorting algorithim is known as a 'Bubble Sort'.
+            //it works by comparing the element in the first index with the one adjacent.
+            //if the number is greater, (or smaller), the numbers are swapped, depending on whether it is an ascending array or descending.
 
-            //this for loop will loop through the contents in the array starting from the first number
-            for (int p = 0; p <= a.Length - 2; p++)
+            int t;
+
+            // The algorithim will travel through the array starting from 0.
+            for (int i = 0; i < arr.Length - 1; i++)
             {
-                //here is another for loop 
-                for (int i = 0; i <= a.Length - 2; i++)
+                // The sorting algorithim will traverse through the array. 
+                for (int j = i + 1; j < arr.Length; j++)
                 {
-                    int t;
-                    if (a[i] > a[i + 1])
+                    //the if statement will check and see if the element adjacent to the next is smaller.
+                    if (arr[i] < arr[j])
                     {
-                        t = a[i + 1];
-                        a[i + 1] = a[i];
-                        a[i] = t;
+                        t = arr[i]; //if so, it will be stored in a temporary variable and their indexes will swap over.
+                        arr[i] = arr[j];
+                        arr[j] = t;
                     }
                 }
             }
